@@ -21,6 +21,8 @@ public:
 private slots:
     void on_actionConnectToDatabase_triggered();
 
+    void on_actionDisconnectFromDatabase_triggered();
+
 private:
     Ui::MainWindow *ui;
     ConnectionDialog *dlg;

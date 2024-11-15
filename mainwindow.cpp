@@ -4,6 +4,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
+    , dlg(nullptr)
 {
     ui->setupUi(this);
 }
@@ -16,7 +17,16 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_actionConnectToDatabase_triggered()
 {
-    dlg = new ConnectionDialog();
+    if(dlg == nullptr)
+        dlg = new ConnectionDialog();
     dlg->show();
+}
+
+
+void MainWindow::on_actionDisconnectFromDatabase_triggered()
+{
+   if(dlg == nullptr)
+        dlg = new ConnectionDialog();
+    dlg->disconnectFromDatabase();
 }
 

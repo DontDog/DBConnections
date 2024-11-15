@@ -15,6 +15,7 @@ class ConnectionDialog : public QWidget
 
 public:
     explicit ConnectionDialog(QWidget *parent = nullptr);
+    void disconnectFromDatabase();
     ~ConnectionDialog();
     QMessageBox*msg;
 
@@ -25,6 +26,8 @@ private slots:
 private:
     Ui::ConnectionDialog *ui;
     QSqlDatabase db;
+    void showSuccessMessage(const QString &message);
+    void showErrorMessage(const QString &message);
 };
 
 #endif // CONNECTIONDIALOG_H
