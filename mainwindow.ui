@@ -14,8 +14,44 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget"/>
-  <widget class="QMenuBar" name="menubar"/>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>Сессия</string>
+    </property>
+    <addaction name="actionConnectToDatabase"/>
+    <addaction name="actionDisconnectFromDatabase"/>
+    <addaction name="actionUpdateDatabaseState"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionConnectToDatabase">
+   <property name="text">
+    <string>Подключиться к БД</string>
+   </property>
+  </action>
+  <action name="actionDisconnectFromDatabase">
+   <property name="text">
+    <string>Отключиться от БД</string>
+   </property>
+  </action>
+  <action name="actionUpdateDatabaseState">
+   <property name="text">
+    <string>Оьновить состояние БД</string>
+   </property>
+   <property name="toolTip">
+    <string>Обновить состояние БД</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>

@@ -13,3 +13,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+
+void MainWindow::on_actionConnectToDatabase_triggered()
+{
+    dlg = new ConnectionDialog();
+    dlg->show();
+}
+
