@@ -30,3 +30,19 @@ void MainWindow::on_actionDisconnectFromDatabase_triggered()
     dlg->disconnectFromDatabase();
 }
 
+
+void MainWindow::on_pushButton_clicked()
+{
+    qmodel = new QSqlTableModel();
+    qmodel->setQuery("SELECT * FROM product");
+    ui->tableView->setModel(qmodel);
+}
+
+
+void MainWindow::on_actionUpdateDatabaseState_triggered()
+{
+    qmodel = new QSqlTableModel();
+    qmodel->setQuery("SELECT * FROM product");
+    ui->tableView->setModel(qmodel);
+}
+

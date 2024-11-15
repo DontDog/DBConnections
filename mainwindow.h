@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QSqlQueryModel>
 
 #include "connectiondialog.h"
 #include "ui_connectiondialog.h"
@@ -23,8 +24,11 @@ private slots:
 
     void on_actionDisconnectFromDatabase_triggered();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     ConnectionDialog *dlg;
+    QSqlQueryModel *qmodel;
 };
 #endif // MAINWINDOW_H
