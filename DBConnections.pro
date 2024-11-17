@@ -10,17 +10,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    adddialog.cpp \
     connectiondialog.cpp \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    modifydialog.cpp
 
 HEADERS += \
+    adddialog.h \
     connectiondialog.h \
-    mainwindow.h
+    mainwindow.h \
+    modifydialog.h
 
 FORMS += \
+    adddialog.ui \
     connectiondialog.ui \
-    mainwindow.ui
+    mainwindow.ui \
+    modifydialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

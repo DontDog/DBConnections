@@ -43,8 +43,7 @@ void ConnectionDialog::on_btnConnectToDatabase_clicked()
     QString username = ui->lineEditUsername->text();     // Поле для ввода имени пользователя
     QString password = ui->lineEditPassword->text();      // Поле для ввода пароля
 
-    db.setDatabaseName(QString("DRIVER={SQL Server};SERVER=%1;DATABASE=%2;")
-        .arg(serverName).arg(databaseName));
+    db.setDatabaseName(QString("DRIVER={SQL Server};SERVER=%1;DATABASE=%2;").arg(serverName).arg(databaseName));
 
     // Устанавливаем логин и пароль
     db.setUserName(username);

@@ -32,7 +32,11 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEditServerName"/>
+    <widget class="QLineEdit" name="lineEditServerName">
+     <property name="text">
+      <string>etunbergelmir\SQLEXPRESS</string>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QLabel" name="label_2">
@@ -42,7 +46,11 @@
     </widget>
    </item>
    <item>
-    <widget class="QLineEdit" name="lineEditDatabaseName"/>
+    <widget class="QLineEdit" name="lineEditDatabaseName">
+     <property name="text">
+      <string>qtcourse</string>
+     </property>
+    </widget>
    </item>
    <item>
     <widget class="QLabel" name="label_3">
