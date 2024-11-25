@@ -6,6 +6,13 @@ ModifyDialog::ModifyDialog(QWidget *parent) :
     ui(new Ui::ModifyDialog)
 {
     ui->setupUi(this);
+    QSqlQuery *queryCombo = new QSqlQuery();
+
+    queryCombo->exec("SELECT name FROM category");
+    while (queryCombo->next())
+    {
+        ui->comboBox->addItem(queryCombo->value(0).toString());
+    }
 }
 
 ModifyDialog::~ModifyDialog()
@@ -16,10 +23,12 @@ ModifyDialog::~ModifyDialog()
 void ModifyDialog::on_btnEditRecord_clicked()
 {
     QSqlQuery *query = new QSqlQuery();
-    query->prepare("UPDATE product SET name = :name, cat_ID = :cat_ID WHERE ID = :ID");
+    query->prepare("UPDATE product SET name = :name, cat_ID = :category, ImagePath = :image WHERE ID = :ID");
     query->bindValue(":ID", tempID);
     query->bindValue(":name",ui->lineEditRecordName->text());
-    query->bindValue(":cat_ID",ui->lineEditRecordCategory->text());
+    query->bindValue(":category",ui->comboBox->currentIndex()+1);
+    query->bindValue(":image", Img);
+
     if(query->exec())
     {
         close();
@@ -37,8 +46,13 @@ void ModifyDialog::sendingID(int _tempID)
     {
         query->next();
         ui->lineEditRecordName->setText(query->value(0).toString());
-        ui->lineEditRecordCategory->setText(query->value(1).toString());
+        ui->comboBox->setCurrentIndex(query->value(1).toInt()-1);
     }
 }
 
+void ModifyDialog::on_toolButton_clicked()
+{
+    Img = QFileDialog::getOpenFileName(0, "Открыть файл", Img, "*.jpg");
+    ui->label_5->setPixmap(Img);
+}
 

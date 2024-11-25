@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
+    <width>848</width>
     <height>600</height>
    </rect>
   </property>
@@ -14,32 +14,78 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTableView" name="tableView">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
-      <x>270</x>
+      <x>10</x>
       <y>10</y>
-      <width>521</width>
-      <height>351</height>
+      <width>251</width>
+      <height>31</height>
      </rect>
     </property>
-    <property name="contextMenuPolicy">
-     <enum>Qt::CustomContextMenu</enum>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="btnAddRecord">
+       <property name="text">
+        <string>Добавить</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnUpdateRecord">
+       <property name="text">
+        <string>Обновить</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="layoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>271</x>
+      <y>11</y>
+      <width>521</width>
+      <height>411</height>
+     </rect>
     </property>
-    <property name="selectionMode">
-     <enum>QAbstractItemView::SingleSelection</enum>
-    </property>
-    <property name="selectionBehavior">
-     <enum>QAbstractItemView::SelectRows</enum>
-    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QTableView" name="tableView">
+       <property name="contextMenuPolicy">
+        <enum>Qt::CustomContextMenu</enum>
+       </property>
+       <property name="selectionMode">
+        <enum>QAbstractItemView::SingleSelection</enum>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnExportToWord">
+       <property name="text">
+        <string>Экспорт в Word</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnExportToPDF">
+       <property name="text">
+        <string>Экспорт в PDF</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
    <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>50</y>
+      <y>52</y>
       <width>251</width>
-      <height>311</height>
+      <height>371</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -75,7 +121,25 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEditRecordCategory"/>
+      <widget class="QComboBox" name="comboBox"/>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QToolButton" name="toolButton">
+         <property name="text">
+          <string>...</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <widget class="QPushButton" name="btnDeleteRecord">
@@ -100,39 +164,13 @@
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>13</y>
-      <width>251</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QPushButton" name="btnAddRecord">
-       <property name="text">
-        <string>Добавить</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnUpdateRecord">
-       <property name="text">
-        <string>Обновить</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>848</width>
      <height>21</height>
     </rect>
    </property>
@@ -144,7 +182,14 @@
     <addaction name="actionDisconnectFromDatabase"/>
     <addaction name="actionUpdateDatabaseState"/>
    </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>Отчет</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
    <addaction name="menu"/>
+   <addaction name="menu_2"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <action name="actionConnectToDatabase">
@@ -159,10 +204,15 @@
   </action>
   <action name="actionUpdateDatabaseState">
    <property name="text">
-    <string>Оьновить состояние БД</string>
+    <string>Обновить состояние БД</string>
    </property>
    <property name="toolTip">
     <string>Обновить состояние БД</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="text">
+    <string>Графический отчёт…</string>
    </property>
   </action>
  </widget>

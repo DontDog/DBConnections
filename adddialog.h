@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QSqlQuery>
 #include <QMessageBox>
+#include <QFileDialog>
 
 namespace Ui {
 class AddDialog;
@@ -20,8 +21,11 @@ public:
 private slots:
     void on_btnAddRecord_clicked();
 
+    void on_toolButton_clicked();
+
 private:
     Ui::AddDialog *ui;
+    QString Img;
 };
 
 #endif // ADDDIALOG_H
