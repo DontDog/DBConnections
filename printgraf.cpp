@@ -53,7 +53,7 @@ PrintGraf::PrintGraf(QWidget *parent) :
         ui->widget->yAxis->setAutoTickStep(false);
         //Ручная установка шага
         ui->widget->xAxis->setTickStep(1);
-        ui->widget->yAxis->setTickStep(1);
+        ui->widget->yAxis->setTickStep(10);
     }
 
 }

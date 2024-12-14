@@ -164,6 +164,7 @@ void MainWindow::on_tableView_clicked(const QModelIndex &index)
         query->next();
         ui->lineEditRecordName->setText(query->value(0).toString());
         ui->comboBox->setCurrentIndex(query->value(1).toInt()-1);
+
         Img = query->value(2).toString();
         ui->label_4->setPixmap(Img);
 

@@ -81,7 +81,7 @@ void PrintDialog::exportToPDF(){
     str.append("<td>"+QString("Наименование")+"</td>");
     str.append("<td>"+QString("Категория")+"</td></tr>");
     QSqlQuery *query = new QSqlQuery();
-    query->exec("SELECT * FROM product");
+    query->exec("SELECT a.ID, a.name, b.name, a.ImagePath FROM product a INNER JOIN category b ON a.cat_ID = b.id;");
     query->next();
     while(query->next())
     {
